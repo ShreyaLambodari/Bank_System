@@ -1,18 +1,95 @@
-## Getting Started
+# Bank_Managenment_System
+A GUI-based Bank Management System developed in Java using Swing for user interface, JDBC for database connectivity and MYSQL for backend data storage.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📌 FEATURES:
+✅ Account creation with automatic Account Number and PIN generation.
 
-## Folder Structure
+✅ User LOGIN Authetification.
 
-The workspace contains two folders by default, where:
+✅ Deposit, Fast Cash, Help and Withdrawl functionality.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+✅ Input Validations and Alert popups.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+✅ Organized modular structure using Java Packages.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+✅ Planned: Mini-Statement and Balance Enquiry modules.
 
-## Dependency Management
+## 🛠️ TECH STACK:
+-> **Frontend**: Java Swing(GUI)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+-> **Backend**: Java JDBC
+
+-> **Database**: MYSQL
+
+-> **IDE Used**: VS Code
+
+## 🎯 Concepts Applied:
+-> Object Oriented Design
+
+-> GUI Components
+
+-> JDBC Connectivity with CRUD Operations
+
+-> EXception Handling
+
+-> Input validations
+
+## 📂 Folder Structure
+BANK_SYSTEM/
+├── .vscode/
+├── Bank_sys_project/
+│   ├── Balance/
+│   ├── Deposit/
+│   ├── FastCash/
+│   ├── Help/
+│   ├── login_page/
+│   ├── MiniStatement/
+│   ├── Sign_up/
+│   ├── Sign_up2/
+│   ├── Sign_up3/
+│   ├── Transaction/
+│   ├── Withdrawl/
+│   └── src_Bank_Connection/   
+├── README.md
+
+## ⚙️ How to Run the Project
+-> Clone the repo:
+git clone https://github.com/ShreyaLambodari/Bank_Management_System.git
+
+-> Open in VS Code or your preferred IDE.
+
+-> Setup MySQL and create a database bank.
+
+-> Import the SQL script from the database/ folder or manually create tables using your existing table structure.
+
+-> Update your MySQL username and password in DBConnection.java:
+
+   Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/bank", "root", "your_password");
+    
+-> Run the Login.java or SignUp.java file to begin.
+
+
+
+## 🎯 Learning Goals
+GUI development using Java Swing
+
+Database operations with JDBC
+
+Real-time data flow from GUI to MySQL
+
+Handling basic business logic (e.g., balance check before withdrawal)
+
+ ## 📌 Future Enhancements:
+✅ Mini Statement generation
+
+✅ Account deletion option
+
+✅ Admin panel for account approvals
+
+✅ Password encryption using hashing
+
+✅ GUI enhancements and custom themes
+
+
+
