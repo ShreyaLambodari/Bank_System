@@ -1,4 +1,4 @@
-# Bank_Managenment_System
+# Bank_Management_System
 A GUI-based Bank Management System developed in Java using Swing for user interface, JDBC for database connectivity and MYSQL for backend data storage.
 
 ## 📌 FEATURES:
