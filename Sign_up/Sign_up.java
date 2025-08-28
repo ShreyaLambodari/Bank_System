@@ -26,7 +26,7 @@ public class Sign_up extends JFrame implements ActionListener{
     String[] date, mth, yr, states;
     JComboBox<String> date_box, mth_box, yr_box, state_box;
     Random num;
-    int app_num;
+    protected int app_num;
 
     public Sign_up() throws Exception {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -36,7 +36,8 @@ public class Sign_up extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.WHITE);
 
         num = new Random();
-        app_num = Math.abs((num.nextInt()/9000+1000));
+        app_num = Math.abs((num.nextInt(9000)+1000));
+        // System.out.println(app_num);
         form_no = new JLabel("Application ID: "+ app_num );
         add(form_no);
         form_no.setBounds(530, 40, 750, 70);
@@ -97,7 +98,7 @@ public class Sign_up extends JFrame implements ActionListener{
         add(mth_box);
         mth_box.setBackground(Color.WHITE);
 
-        String[] yr = {"1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"};
+        String[] yr = {"2030", "2029", "2028", "2027", "2026", "2025", "2024", "2023", "2022", "2021","2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011","2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930"};
 
         yr_box = new JComboBox<>(yr);
         yr_box.setBounds(460,550,70,30);
@@ -182,7 +183,7 @@ public class Sign_up extends JFrame implements ActionListener{
         st.setBounds(800, 644, 250, 70);
         st.setFont(new Font("Raleway", Font.BOLD, 20));
 
-        String[] states = {"Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar","Chhattisgarh", "Goa", "Gujarat", "Haryana","Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra"," Manipur", "Meghalaya","Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"};
+        String[] states = {"Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar","Chhattisgarh", "Goa", "Gujarat", "Haryana","Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra","Manipur", "Meghalaya","Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"};
 
         state_box = new JComboBox<>(states);
         state_box.setBounds(980,651,300,40);
@@ -205,7 +206,7 @@ public class Sign_up extends JFrame implements ActionListener{
 
     
     }
-    @Override
+    @Override 
     public void actionPerformed(ActionEvent ae) {
         String app_form_no = "" + app_num;
         String applicant_name = name_box.getText() ;
@@ -260,16 +261,16 @@ public class Sign_up extends JFrame implements ActionListener{
                         JOptionPane.showMessageDialog(yr_box, "Year is required");
                 }else{
                         Connection_ c1 = new Connection_();
-                        String query = "insert into signup values ('"+applicant_name+"', '"+applicant_father+"', '"+applicant_mother+"', '"+applicant_email+"', '"+applicant_city+"', '"+applicant_add+"', '"+applicant_gender+"', '"+applicant_status+"', '"+applicant_state+"', '"+applicant_date+"', '"+applicant_month+"', '"+applicant_yr+"')";
-                        // String query_log = "insert into login values('"+applicant_name+"')";
+                        String query = "insert into signup values ('"+applicant_name+"', '"+applicant_father+"', '"+applicant_mother+"', '"+applicant_email+"', '"+applicant_city+"', '"+applicant_add+"', '"+applicant_gender+"', '"+applicant_status+"', '"+applicant_state+"', '"+applicant_date+"', '"+applicant_month+"', '"+applicant_yr+"','"+app_form_no+"')";
+                        
                         c1.s.executeUpdate(query);
-                        // c1.s.executeUpdate(query_log);
+                        
                 }
                 System.out.println("Page 1 Data inserted successfully!!");
         } catch (Exception e) {
                System.out.println(e);
-        }
-        if (ae.getSource()==clear) {
+        }try {
+                if (ae.getSource()==clear) {
                 name_box.setText(""); father_name_box.setText(""); mother_name_box.setText("");email_box.setText(""); add_box.setText(""); ct_box.setText(""); 
         }else if(ae.getSource()==next){
                 setVisible(false);
@@ -280,6 +281,20 @@ public class Sign_up extends JFrame implements ActionListener{
                 }
                 
         }
+        } catch (Exception e) {
+                System.out.println(e);
+        }
+        // if (ae.getSource()==clear) {
+        //         name_box.setText(""); father_name_box.setText(""); mother_name_box.setText("");email_box.setText(""); add_box.setText(""); ct_box.setText(""); 
+        // }else if(ae.getSource()==next){
+        //         setVisible(false);
+        //         try {
+        //                 new Sign_up2().setVisible(true);
+        //         } catch (Exception e) {
+        //                 System.out.println(e);
+        //         }
+                
+        // }
 
     }
 
