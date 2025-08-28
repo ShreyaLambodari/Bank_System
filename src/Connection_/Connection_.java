@@ -1,4 +1,4 @@
-package Bank_sys_project.Connection_;
+package Bank_sys_project.src.Connection_;
 import java.sql.*;
 public class Connection_ {
     public Connection c;

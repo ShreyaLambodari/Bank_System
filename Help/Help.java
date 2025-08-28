@@ -2,7 +2,7 @@ package Bank_sys_project.Help;
 
 import javax.swing.JOptionPane;
 
-import Bank_sys_project.Connection_.Connection_;
+import Bank_sys_project.src.Connection_.Connection_;
 
 public class Help {
     public Help(){

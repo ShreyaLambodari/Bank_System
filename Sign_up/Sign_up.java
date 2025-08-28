@@ -1,6 +1,6 @@
 package Bank_sys_project.Sign_up;
-import Bank_sys_project.Connection_.Connection_;
 import Bank_sys_project.Sign_up2.Sign_up2;
+import Bank_sys_project.src.Connection_.Connection_;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -26,7 +26,7 @@ public class Sign_up extends JFrame implements ActionListener{
     String[] date, mth, yr, states;
     JComboBox<String> date_box, mth_box, yr_box, state_box;
     Random num;
-    protected int app_num;
+    int app_num;
 
     public Sign_up() throws Exception {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -37,7 +37,6 @@ public class Sign_up extends JFrame implements ActionListener{
 
         num = new Random();
         app_num = Math.abs((num.nextInt(9000)+1000));
-        // System.out.println(app_num);
         form_no = new JLabel("Application ID: "+ app_num );
         add(form_no);
         form_no.setBounds(530, 40, 750, 70);
@@ -206,7 +205,7 @@ public class Sign_up extends JFrame implements ActionListener{
 
     
     }
-    @Override 
+    @Override
     public void actionPerformed(ActionEvent ae) {
         String app_form_no = "" + app_num;
         String applicant_name = name_box.getText() ;
@@ -261,16 +260,16 @@ public class Sign_up extends JFrame implements ActionListener{
                         JOptionPane.showMessageDialog(yr_box, "Year is required");
                 }else{
                         Connection_ c1 = new Connection_();
-                        String query = "insert into signup values ('"+applicant_name+"', '"+applicant_father+"', '"+applicant_mother+"', '"+applicant_email+"', '"+applicant_city+"', '"+applicant_add+"', '"+applicant_gender+"', '"+applicant_status+"', '"+applicant_state+"', '"+applicant_date+"', '"+applicant_month+"', '"+applicant_yr+"','"+app_form_no+"')";
-                        
+                        String query = "insert into signup values ('"+applicant_name+"', '"+applicant_father+"', '"+applicant_mother+"', '"+applicant_email+"', '"+applicant_city+"', '"+applicant_add+"', '"+applicant_gender+"', '"+applicant_status+"', '"+applicant_state+"', '"+applicant_date+"', '"+applicant_month+"', '"+applicant_yr+"', '"+app_form_no+"')";
+                        // String query_log = "insert into login values('"+applicant_name+"')";
                         c1.s.executeUpdate(query);
-                        
+                        // c1.s.executeUpdate(query_log);
                 }
                 System.out.println("Page 1 Data inserted successfully!!");
         } catch (Exception e) {
                System.out.println(e);
-        }try {
-                if (ae.getSource()==clear) {
+        }
+        if (ae.getSource()==clear) {
                 name_box.setText(""); father_name_box.setText(""); mother_name_box.setText("");email_box.setText(""); add_box.setText(""); ct_box.setText(""); 
         }else if(ae.getSource()==next){
                 setVisible(false);
@@ -281,20 +280,6 @@ public class Sign_up extends JFrame implements ActionListener{
                 }
                 
         }
-        } catch (Exception e) {
-                System.out.println(e);
-        }
-        // if (ae.getSource()==clear) {
-        //         name_box.setText(""); father_name_box.setText(""); mother_name_box.setText("");email_box.setText(""); add_box.setText(""); ct_box.setText(""); 
-        // }else if(ae.getSource()==next){
-        //         setVisible(false);
-        //         try {
-        //                 new Sign_up2().setVisible(true);
-        //         } catch (Exception e) {
-        //                 System.out.println(e);
-        //         }
-                
-        // }
 
     }
 

@@ -3,7 +3,8 @@ package Bank_sys_project.Deposit;
 import javax.swing.*;
 
 import Bank_sys_project.Transaction.Transaction;
-import Bank_sys_project.Connection_.*;
+import Bank_sys_project.src.Connection_.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;

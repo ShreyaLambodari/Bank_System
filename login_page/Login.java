@@ -3,8 +3,7 @@ import Bank_sys_project.Sign_up.Sign_up;
 // import Bank_sys_project.Sign_up2.Sign_up2;
 // import Bank_sys_project.Sign_up3.Sign_up3;
 import Bank_sys_project.Transaction.Transaction;
-import Bank_sys_project.Connection_.Connection_;
-import Bank_sys_project.Forgot_Password.Forgot_Password;
+import Bank_sys_project.src.Connection_.*;
 
 import java.sql.*;
 import java.awt.Color;
@@ -27,8 +26,10 @@ public class Login extends JFrame implements ActionListener{
     JTextField box_1;
     JPasswordField box_2;
     JLabel pin, card_no ;
-    JButton forgot_password;
-  
+    JButton  forgot_password;
+    /**
+     * @throws Exception
+     */
     Login() throws Exception{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocation(0, 0);
@@ -119,16 +120,11 @@ public class Login extends JFrame implements ActionListener{
         sign_up.addActionListener(this);
         
         forgot_password = new JButton("Forgot Password?");
-        forgot_password.setBounds(655, 630 , 230 , 45);
-        forgot_password.setFont(new Font("Raleway", Font.BOLD, 16));
-        forgot_password.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        forgot_password.setForeground(Color.DARK_GRAY);
-        bg.add(forgot_password);
+        forgot_password.setBounds(705, 600, 200, 30); 
         forgot_password.setBorderPainted(false);
         forgot_password.setContentAreaFilled(false);
         forgot_password.setFocusPainted(false);
-        forgot_password.addMouseListener((MouseListener) this);
-       
+        forgot_password.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
     @Override
     public void actionPerformed (ActionEvent ae) {
@@ -180,4 +176,4 @@ public class Login extends JFrame implements ActionListener{
            System.out.println(e);
         }
     }
-}
+}                      

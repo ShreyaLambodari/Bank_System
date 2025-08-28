@@ -2,7 +2,7 @@ package Bank_sys_project.Sign_up3;
 import Bank_sys_project.Sign_up.Sign_up;
 import Bank_sys_project.Sign_up2.Sign_up2;
 import Bank_sys_project.Transaction.Transaction;
-import Bank_sys_project.Connection_.Connection_;
+import Bank_sys_project.src.Connection_.Connection_;
 
 import javax.swing.*;
 import java.awt.*;
