@@ -54,7 +54,7 @@ BANK_SYSTEM/
 
 ## ⚙️ How to Run the Project
 -> Clone the repo:
-git clone https://github.com/ShreyaLambodari/Bank_Management_System.git
+git clone https://github.com/ShreyaLambodari/Bank_System.git
 
 -> Open in VS Code or your preferred IDE.
 
