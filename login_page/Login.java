@@ -1,4 +1,5 @@
 package Bank_sys_project.login_page;
+import Bank_sys_project.Forgot_Password.Forgot_Password;
 import Bank_sys_project.Sign_up.Sign_up;
 // import Bank_sys_project.Sign_up2.Sign_up2;
 // import Bank_sys_project.Sign_up3.Sign_up3;
@@ -120,52 +121,59 @@ public class Login extends JFrame implements ActionListener{
         sign_up.addActionListener(this);
         
         forgot_password = new JButton("Forgot Password?");
-        forgot_password.setBounds(705, 600, 200, 30); 
+        forgot_password.setBounds(670, 625, 200, 35); 
+        forgot_password.setFont(new Font("Arial", Font.BOLD, 16));
         forgot_password.setBorderPainted(false);
         forgot_password.setContentAreaFilled(false);
         forgot_password.setFocusPainted(false);
         forgot_password.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        bg.add(forgot_password);
+        forgot_password.addActionListener(this);
+
+
     }
-    @Override
-    public void actionPerformed (ActionEvent ae) {
-        if(ae.getSource()==sign_in){
-            Connection_ c1 = new Connection_();
-            String cardnumber = box_1.getText();
-            String pinnumber = box_2.getText();
-            String q = "(select * from signup3 where applicant_c_number = '"+cardnumber+"' and applicant_p_number = '"+pinnumber+"')";
-            try {
-                c1.s.executeUpdate(q);
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+@Override
+public void actionPerformed(ActionEvent ae) {
+    if(ae.getSource() == sign_in){
+        Connection_ c1 = new Connection_();
+        String cardnumber = box_1.getText();
+        String pinnumber = box_2.getText(); 
+
+        String q = "SELECT * FROM signup3 WHERE applicant_c_number = '"+cardnumber+"' AND applicant_p_number = '"+pinnumber+"'";
+        try {
+            ResultSet r = c1.s.executeQuery(q); 
+            if(r.next()){ 
+                setVisible(false);
+                new Transaction().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Incorrect Card Number or Pin");
             }
-            try {
-               ResultSet r =c1.s.executeQuery(q);
-               if (((ResultSet) r).next()) {
-                   setVisible(false); 
-                   new Transaction(pinnumber).setVisible(true);               
-               }else {
-                   JOptionPane.showMessageDialog(null, "Incorrect Card Number or Pin");
-               }
-            }catch (Exception e) {
-                System.out.println(e);
-            }
-            
-            
-        }
-        else if(ae.getSource()==clear){
-            box_1.setText("");
-            box_2.setText("");
-        }
-        else{
-            setVisible(false);
-            try {
-                new Sign_up().setVisible(true);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+        } catch(Exception e){
+            System.out.println(e);
         }
     }
+    else if(ae.getSource() == forgot_password) {
+        setVisible(false);
+        try {
+            new Forgot_Password().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    else if(ae.getSource()==clear){
+        box_1.setText("");
+        box_2.setText("");
+    }
+    else if (ae.getSource()==sign_up){
+        setVisible(false);
+        try {
+            new Sign_up().setVisible(true);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
 
 
 

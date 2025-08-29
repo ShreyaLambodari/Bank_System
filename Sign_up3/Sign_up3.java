@@ -201,7 +201,7 @@ public class Sign_up3 extends JFrame implements ActionListener {
                 try {
                         JOptionPane.showMessageDialog(null, "Account generated successfully \n Card number:" + applicant_c_number + "\n Pin:" + applicant_p_number);
                         setVisible(false);
-                        new Transaction("").setVisible(true);
+                        new Transaction().setVisible(true);
                         
                 } catch (Exception e) {
                         System.out.println(e);

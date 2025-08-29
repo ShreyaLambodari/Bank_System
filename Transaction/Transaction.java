@@ -1,5 +1,5 @@
 package Bank_sys_project.Transaction;
-
+import Bank_sys_project.src.Connection_.*;
 import Bank_sys_project.Deposit.Deposit;
 import Bank_sys_project.FastCash.Fast_Cash;
 import Bank_sys_project.Help.Help;
@@ -16,8 +16,8 @@ public class Transaction extends JFrame implements ActionListener {
     String pinnumber;
     JLayeredPane layeredPane;
 
-    public Transaction(String pinnumber) throws Exception {
-        this.pinnumber = pinnumber;
+    public Transaction() throws Exception {
+        // this.pinnumber = pinnumber;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocation(0, 0);
         setTitle("Transaction Page");
@@ -120,7 +120,7 @@ public class Transaction extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         try {
-            new Transaction("");
+            new Transaction();
         } catch (Exception e) {
             System.out.println(e);
         }

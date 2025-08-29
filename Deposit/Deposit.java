@@ -83,7 +83,7 @@ public class Deposit extends JFrame implements ActionListener{
                     JOptionPane.showMessageDialog(null, "Rs." + amt_number + " Deposited Successfully");
                     setVisible(false);
                     try {
-                        new Transaction(pinnumber);
+                        new Transaction();
                         setVisible(true);
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
@@ -98,7 +98,7 @@ public class Deposit extends JFrame implements ActionListener{
             setVisible(false);
             try {
                 String pinnumber = " ";
-                new Transaction(pinnumber).setVisible(true);;
+                new Transaction().setVisible(true);;
 
             } catch (Exception e) {
                 System.out.println(e);
